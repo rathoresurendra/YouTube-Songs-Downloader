@@ -14,7 +14,6 @@ def getDirName(str):
     source = urllib2.urlopen(str)
     BS = BeautifulSoup(source)
     plName = BS.find('div', attrs={'class':'playlist-header-content'})
-    print(plName)
     if(plName != None):
 	    plName = plName['data-list-title']
 	    return ''.join(e for e in plName if (e.isalnum() or e.isspace()))
